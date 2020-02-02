@@ -10,12 +10,12 @@ void selection_sort(int *array, size_t size)
 	int idx = 0;
 	size_t fir, sec = 0;
 
-	for(fir = 0; fir < size - 1; fir++)
+	for (fir = 0; fir < size - 1; fir++)
 	{
 		idx = fir;
-		for(sec = fir + 1; sec < size; sec++)
+		for (sec = fir + 1; sec < size; sec++)
 		{
-			if(array[sec] < array[idx])
+			if (array[sec] < array[idx])
 			{
 				idx = sec;
 			}
@@ -23,4 +23,21 @@ void selection_sort(int *array, size_t size)
 		swapper(&array[idx], &array[fir]);
 		print_array(array, size);
 	}
+}
+/**
+ * swapper - swaps two nodes
+ * @x: left node
+ * @y: right node
+ * Return: N/A
+ */
+void swapper(int *x, int *y)
+{
+	int temp;
+
+	if (x == y)
+		return;
+
+	temp = *x;
+	*x = *y;
+	*y = temp;
 }
